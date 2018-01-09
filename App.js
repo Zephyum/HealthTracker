@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
-import { AppRegistry, Image } from 'react-native';
+import { View } from 'react-native';
+import firebase from 'firebase'
+import { Header } from './src/components/common'
+import LoginForm from './src/components/LoginForm.js'
 
-export default class Bananas extends Component {
+export default class App extends Component {
+  componentWillMount(){
+    firebase.initializeApp({
+    apiKey: "AIzaSyAKGRxarG9SQFhzoEKKvFB9vK2aAEZxaJA",
+    authDomain: "health-tracker-zephyum.firebaseapp.com",
+    databaseURL: "https://health-tracker-zephyum.firebaseio.com",
+    projectId: "health-tracker-zephyum",
+    storageBucket: "health-tracker-zephyum.appspot.com",
+    messagingSenderId: "699378839717"
+  })
+}
+
   render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
     return (
-      <Image source={pic} style={{width: 330, height: 200}}/>
+      <View>
+      <Header headerText="Authentication!"/>
+      <LoginForm />
+      </View>
     );
   }
 }
