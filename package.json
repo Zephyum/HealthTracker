@@ -25,6 +25,11 @@
     "react": "16.0.0",
     "react-native": "0.50.3",
     "react-native-material-design": "^0.3.7",
+    "react-native-router-flux": "^4.0.0-beta.27",
+    "react-native-slider": "^0.11.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "watchman": "^1.0.0"
   }
 }
