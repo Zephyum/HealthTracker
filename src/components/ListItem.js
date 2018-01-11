@@ -6,7 +6,7 @@ import {
   LayoutAnimation
 } from 'react-native'
 import { connect } from 'react-redux'
-import { CardSection } from './common'
+import { CardSection, Card } from './common'
 import * as actions from '../actions'
 
 class ListItem extends Component {
@@ -20,13 +20,13 @@ class ListItem extends Component {
     if (expanded) {
       return(
         <CardSection>
-        <Text style={{
-          flex: 1,
-          paddingLeft: 15,
-          paddingRight: 15
-         }}>
-        {library.description}
-        </Text>
+          <Text style={{
+            flex: 1,
+            paddingLeft: 15,
+            paddingRight: 15
+           }}>
+          {library.description}
+          </Text>
         </CardSection>
       )
     }
@@ -41,12 +41,14 @@ class ListItem extends Component {
         onPress={() => this.props.selectLibrary(id)}
       >
         <View>
+          <Card>
           <CardSection>
             <Text style={titleStyle}>
               {title}
             </Text>
           </CardSection>
           {this.renderDescription()}
+        </Card>
         </View>
       </TouchableWithoutFeedback>
     )

@@ -10,6 +10,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
         secureTextEntry={secureTextEntry}
         placeholder={placeholder}
         autoCorrect={false}
+        numeric={false}
         style={inputStyle}
         value={value}
         onChangeText={onChangeText}
