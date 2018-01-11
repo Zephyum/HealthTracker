@@ -30,7 +30,6 @@ export default class App extends Component {
       <Provider store={store}>
         <View style={{ flex: 1 }}>
           <Router />
-           {/*<LibraryList /> */}
         </View>
       </Provider>
     );
