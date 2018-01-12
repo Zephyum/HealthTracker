@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { ListView } from 'react-native'
 import { connect } from 'react-redux'
 import ListItem from './ListItem'
+import entryFetch from '../actions'
 
 class LibraryList extends Component {
   componentWillMount() {
