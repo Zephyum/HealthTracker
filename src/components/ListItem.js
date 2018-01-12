@@ -14,8 +14,8 @@ class ListItem extends Component {
     LayoutAnimation.spring()
   }
 
-  renderDescription() {
-    const { library, expanded} = this.props
+  {/* renderDescription() {
+    const { entry, expanded} = this.props
 
     if (expanded) {
       return(
@@ -25,29 +25,29 @@ class ListItem extends Component {
             paddingLeft: 15,
             paddingRight: 15
            }}>
-          {library.description}
+          {entry.description}
           </Text>
         </CardSection>
       )
     }
-  }
+  } */}
 
   render() {
     const { titleStyle } = styles
-    const { id, title } = this.props.library
+    const { mood, stress, food, water, excercise, sleep, description } = this.props.entry
 
     return (
       <TouchableWithoutFeedback
-        onPress={() => this.props.selectLibrary(id)}
+        onPress={() => this.props.selectLibrary(uid)}
       >
         <View>
           <Card>
           <CardSection>
             <Text style={titleStyle}>
-              {title}
+              {mood}
             </Text>
           </CardSection>
-          {this.renderDescription()}
+          {/* {this.renderDescription()} */}
         </Card>
         </View>
       </TouchableWithoutFeedback>

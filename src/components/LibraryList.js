@@ -1,24 +1,36 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 import { ListView } from 'react-native'
 import { connect } from 'react-redux'
-import ListItem from './ListItem'
-import entryFetch from '../actions'
+import ListItems from './ListItems'
+import { entryFetch } from '../actions'
 
 class LibraryList extends Component {
   componentWillMount() {
+    this.props.entryFetch()
+
+    this.createDataSource(this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.createDataSource(nextProps)
+  }
+
+  createDataSource({ entries }) {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
-    this.dataSource = ds.cloneWithRows(this.props.libraries)
+    this.dataSource = ds.cloneWithRows(entries)
   }
 
-  renderRow(library) {
-    return <ListItem library={library}/>
+  renderRow(entry) {
+    return <ListItem entry={entry}/>
   }
 
   render() {
     return (
       <ListView
+        enableEmptySections
         dataSource={this.dataSource}
         renderRow={this.renderRow} />
     )
@@ -26,7 +38,11 @@ class LibraryList extends Component {
 }
 
 const mapStateToProps = state => {
-  return { libraries: state.libraries }
+  const entries = _.map(state.entries, (val, uid) => {
+    return { ...val, uid }
+  })
+
+  return { entries }
 }
 
-export default connect(mapStateToProps)(LibraryList)
+export default connect(mapStateToProps, { entryFetch })(LibraryList)

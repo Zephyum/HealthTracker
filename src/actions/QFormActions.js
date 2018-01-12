@@ -1,10 +1,10 @@
+import firebase from 'firebase'
+import { Actions } from 'react-native-router-flux'
 import {
   Q_UPDATE,
   ENTRY_CREATE,
   ENTRY_FETCH_SUCCESS
 } from './types'
-import firebase from 'firebase'
-import { Actions } from 'react-native-router-flux'
 
 export const QUpdate = ({ prop, value }) => {
   return {
@@ -26,12 +26,12 @@ export const entryCreate = ({ mood, stress, food, water, excercise, sleep, descr
 }
 
 export const entryFetch = () => {
-  const { currentUser } = firebase.auth()
+  const { currentUser } = firebase.auth();
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/entries`)
       .on('value', snapshot => {
-        dispatch({ type: ENTRY_FETCH_SUCCESS, payload: shapshot.val() })
-      })
-  }
-}
+        dispatch({ type: ENTRY_FETCH_SUCCESS, payload: snapshot.val() });
+      });
+  };
+};

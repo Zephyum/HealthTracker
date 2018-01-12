@@ -8,15 +8,6 @@ import {
   LOGIN_USER
 } from './types'
 
-
-export const selectLibrary = (libraryId) => {
-  return {
-    type: 'select_library',
-    payload: libraryId
-  }
-}
-
-
 export const emailChanged = (text) => {
   return {
     type: EMAIL_CHANGED,

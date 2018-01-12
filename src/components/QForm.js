@@ -23,8 +23,8 @@ class QForm extends Component {
         <CardSection>
           <Sliderr
             label="Mood"
-            label2={this.props.mood}
-            value={1}
+            label2={this.props.mood || 1}
+            value={this.props.mood || 1}
             minimumValue={1}
             maximumValue={10}
             step={1}
@@ -35,8 +35,8 @@ class QForm extends Component {
         <CardSection>
           <Sliderr
             label="Stress"
-            label2={this.props.stress}
-            value={1}
+            label2={this.props.stress || 1}
+            value={this.props.stress || 1}
             minimumValue={1}
             maximumValue={10}
             step={1}
@@ -47,8 +47,8 @@ class QForm extends Component {
         <CardSection>
           <Sliderr
             label="Food"
-            label2={this.props.food}
-            value={1}
+            label2={this.props.food || 1}
+            value={this.props.food || 1}
             minimumValue={1}
             maximumValue={10}
             step={1}
@@ -59,8 +59,8 @@ class QForm extends Component {
         <CardSection>
           <Sliderr
             label="Water"
-            label2={this.props.water}
-            value={1}
+            label2={this.props.water || 1}
+            value={this.props.water || 1}
             minimumValue={1}
             maximumValue={10}
             step={1}
@@ -71,8 +71,8 @@ class QForm extends Component {
         <CardSection>
           <Sliderr
             label="Excercise"
-            label2={this.props.excercise}
-            value={1}
+            label2={this.props.excercise || 1}
+            value={this.props.excercise || 1}
             minimumValue={1}
             maximumValue={10}
             step={1}
@@ -83,8 +83,8 @@ class QForm extends Component {
         <CardSection>
           <Sliderr
             label="Sleep"
-            label2={this.props.sleep}
-            value={1}
+            label2={this.props.sleep || 1}
+            value={this.props.sleep || 1}
             minimumValue={1}
             maximumValue={10}
             step={1}
