@@ -3,8 +3,6 @@ import { View } from 'react-native'
 import LibraryList from './LibraryList'
 import QForm from './QForm'
 
-{/*  */}
-
 class MainData extends Component {
   render() {
     return(

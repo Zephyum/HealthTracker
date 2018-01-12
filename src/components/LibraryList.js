@@ -6,6 +6,7 @@ import ListItems from './ListItems'
 import { entryFetch } from '../actions'
 
 class LibraryList extends Component {
+
   componentWillMount() {
     this.props.entryFetch()
 
@@ -20,14 +21,16 @@ class LibraryList extends Component {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     })
-    this.dataSource = ds.cloneWithRows(entries)
+
+    this.dataSource = ds.cloneWithRows(entries || [])
   }
 
   renderRow(entry) {
-    return <ListItem entry={entry}/>
+    return <ListItems entry={entry}/>
   }
 
   render() {
+    console.log(this.props.entries)
     return (
       <ListView
         enableEmptySections
@@ -40,8 +43,8 @@ class LibraryList extends Component {
 const mapStateToProps = state => {
   const entries = _.map(state.entries, (val, uid) => {
     return { ...val, uid }
+    console.log(entries)
   })
-
   return { entries }
 }
 

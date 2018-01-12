@@ -5,12 +5,12 @@ import { CardSection } from './common'
 class ListItems extends Component {
   render() {
     const { mood } = this.props.entry
-
-    return (
+    
+      return (
       <CardSection>
-      <Text>
-        {mood}
-      </Text>
+        <Text>
+          {mood}
+        </Text>
       </CardSection>
     )
   }

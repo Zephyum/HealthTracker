@@ -10,6 +10,5 @@ export default combineReducers({
   selectedLibraryId: SelectionReducer,
   auth: AuthReducer,
   QForm: QFormReducer,
-  Entries: EntryReducer
-
+  entries: EntryReducer,
 })
