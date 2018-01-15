@@ -8,6 +8,15 @@ import {
   LOGIN_USER
 } from './types'
 
+
+export const selectEntry = (date) => {
+  return {
+    type: 'select_library',
+    payload: date
+  }
+}
+
+
 export const emailChanged = (text) => {
   return {
     type: EMAIL_CHANGED,

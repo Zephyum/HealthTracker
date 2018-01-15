@@ -3,6 +3,7 @@ import { Scene, Router } from 'react-native-router-flux'
 import LoginForm from './components/LoginForm'
 import LibraryList from './components/LibraryList'
 import MainData from './components/MainData'
+import ChartView from './components/ChartView'
 
 const RouterComponent = () => {
   return (
@@ -13,6 +14,9 @@ const RouterComponent = () => {
         </Scene>
         <Scene key="main">
           <Scene key="dataList" component={MainData} title="Ease Your Mind" />
+        </Scene>
+        <Scene key="chart">
+          <Scene key="chartView" component={ChartView} title="Ease Your Mind" />
         </Scene>
       </Scene>
     </Router>

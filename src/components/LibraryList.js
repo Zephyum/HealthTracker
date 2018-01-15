@@ -44,7 +44,7 @@ const mapStateToProps = state => {
   const entries = _.map(state.entries, (val, uid) => {
     return { ...val, uid }
     console.log(entries)
-  })
+    })
   return { entries }
 }
 

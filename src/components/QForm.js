@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import moment from 'moment'
 import { Card, CardSection, Input, Button, Sliderr } from './common'
 import { QUpdate, entryCreate } from '../actions'
 
 class QForm extends Component {
+
   onButtonPress() {
-    const { mood, stress, food, water, excercise, sleep, description } = this.props
+    const { mood, stress, food, water, excercise, sleep, description, date } = this.props
 
     this.props.entryCreate({
       mood: mood || 1,
@@ -14,7 +16,9 @@ class QForm extends Component {
       water: water || 1,
       excercise: excercise || 1,
       sleep: sleep || 1,
-      description: description || 'NA' })
+      description: description || 'NA',
+      date: moment().format('L'),
+    })
   }
 
   render() {

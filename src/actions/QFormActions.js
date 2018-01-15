@@ -13,15 +13,16 @@ export const QUpdate = ({ prop, value }) => {
   }
 }
 
-export const entryCreate = ({ mood, stress, food, water, excercise, sleep, description }) => {
+export const entryCreate = ({ mood, stress, food, water, excercise, sleep, description, date }) => {
   const { currentUser } = firebase.auth()
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/entries`)
-      .push({ mood, stress, food, water, excercise, sleep, description })
+      .push({ mood, stress, food, water, excercise, sleep, description, date })
        .then(() => {
           dispatch({ type: ENTRY_CREATE })
        })
+    Actions.chart()
   }
 }
 
