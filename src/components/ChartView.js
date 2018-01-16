@@ -6,10 +6,14 @@ import Chart from './Chart'
 class MainData extends Component {
   render() {
     return(
-      <View>
-        <Chart />
-        <LibraryList />
-    </View>
+      <View style={{ flex: 1}}>
+        <View>
+          <Chart />
+        </View>
+        <ScrollView>
+          <LibraryList />
+        </ScrollView>
+      </View>
     )
   }
 }

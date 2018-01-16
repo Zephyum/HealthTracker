@@ -9,29 +9,127 @@ class ListItems extends Component {
     LayoutAnimation.spring()
   }
 
+  // { mood, stress, food, water, excercise, sleep, description, date }
+
   renderDescription() {
     const { entry, expanded } = this.props
 
     if (expanded) {
       return(
-        <Card>
-        <CardSection style={{flex: 1}}>
-            <Text style={{
-              flex: 1,
-              paddingLeft: 15,
-              paddingRight: 15
-             }}>
-              Description:
-            </Text>
-            <Text style={{
-              flex: 1,
-              paddingLeft: 15,
-              paddingRight: 15
-             }}>
-             {entry.description}
-             </Text>
-             </CardSection>
-           </Card>
+        <View>
+          <Card>
+            <CardSection style={{flex: 1}}>
+              <Text style={{
+                // flex: 1,
+                // paddingLeft: 15,
+                // paddingRight: 15
+               }}>
+                mood:
+              </Text>
+              <Text style={{
+                // flex: 1,
+                // paddingLeft: 15,
+                // paddingRight: 15
+               }}>
+                {entry.mood}
+               </Text>
+            </CardSection>
+          </Card>
+
+          <Card>
+            <CardSection style={{flex: 1}}>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                Stress:
+              </Text>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                {entry.stress}
+              </Text>
+            </CardSection>
+          </Card>
+
+          <Card>
+            <CardSection style={{flex: 1}}>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                Food:
+              </Text>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                {entry.food}
+              </Text>
+            </CardSection>
+          </Card>
+
+          <Card>
+            <CardSection style={{flex: 1}}>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                Water:
+              </Text>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                {entry.water}
+              </Text>
+            </CardSection>
+          </Card>
+
+          <Card>
+            <CardSection style={{flex: 1}}>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                Excercise:
+              </Text>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                {entry.Sleep}
+              </Text>
+            </CardSection>
+          </Card>
+          <Card>
+            <CardSection style={{flex: 1}}>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                Description:
+              </Text>
+              <Text style={{
+                   // flex: 1,
+                   // paddingLeft: 15,
+                   // paddingRight: 15
+              }}>
+                {entry.description}
+              </Text>
+            </CardSection>
+          </Card>
+        </View>
       )
     }
   }
@@ -49,10 +147,10 @@ class ListItems extends Component {
                 <Text>
                   {date}
                 </Text>
+              </CardSection>
                 <CardSection>
                 {this.renderDescription()}
                 </CardSection>
-              </CardSection>
             </Card>
           </View>
         </TouchableWithoutFeedback>
