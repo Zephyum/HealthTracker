@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import { connect } from 'react-redux'
 import { emailChanged, passwordChanged, loginUser } from '../actions'
 import { Card, CardSection, Input, Button, Spinner } from './common'
@@ -45,33 +45,39 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label="Email:"
-            placeholder="email@domain.com"
-            keyboardType='email-address'
-            onChangeText={this.onEmailChange.bind(this)}
-            value={this.props.email}
-            />
-        </CardSection>
+      <View>
+        <Image
+          style={{ width: 375, Height: 50 }}
+          source={require('../pictures/roughbrain.jpg')}
+        />
+        <Card>
+          <CardSection>
+            <Input
+              label="Email:"
+              placeholder="email@domain.com"
+              keyboardType='email-address'
+              onChangeText={this.onEmailChange.bind(this)}
+              value={this.props.email}
+              />
+          </CardSection>
 
-        <CardSection>
-          <Input
-            secureTextEntry
-            label="Password:"
-            placeholder="password"
-            onChangeText={this.onPasswordChange.bind(this)}
-            value={this.props.password}
-            />
-        </CardSection>
+          <CardSection>
+            <Input
+              secureTextEntry
+              label="Password:"
+              placeholder="password"
+              onChangeText={this.onPasswordChange.bind(this)}
+              value={this.props.password}
+              />
+          </CardSection>
 
-        {this.renderError()}
+          {this.renderError()}
 
-        <CardSection>
-          {this.renderButton()}
-        </CardSection>
-      </Card>
+          <CardSection>
+            {this.renderButton()}
+          </CardSection>
+        </Card>
+      </View>
     )
   }
 }
